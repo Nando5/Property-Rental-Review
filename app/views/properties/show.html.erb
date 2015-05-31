@@ -1,0 +1,15 @@
+<h1>Properties#show</h1>
+<p>Find me in app/views/properties/show.html.erb</p>
+
+<h1><%= @property.suburb %></h1>
+	<div class="myList">
+		<ul>
+		  <li><%= @property.street_address %></li>
+		  <li><%= @property.suburb %></li>
+		  <li><%= @property.state %></li>
+		  <li><%= @property.postcode %></li>
+		
+		  <li><%= link_to('Edit', edit_property_path(@property)) %></li>
+		  <li><%= link_to('Delete', @property, :method => 'delete', :data => {:confirm => 'Are you sure?'}) %></li>
+		</ul>
+	</div>
