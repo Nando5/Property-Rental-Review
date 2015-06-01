@@ -13,3 +13,10 @@
 		  <li><%= link_to('Delete', @property, :method => 'delete', :data => {:confirm => 'Are you sure?'}) %></li>
 		</ul>
 	</div>
+
+<h3>Review</h3>
+
+  <% @property.reviews.each do |review| %>
+  	<%= review.comment %>
+
+<% end %>

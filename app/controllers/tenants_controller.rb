@@ -24,6 +24,7 @@ class TenantsController < ApplicationController
   end
 
   def show
+    @tenant = Tenant.find params[:id]
   end
 
   def update
