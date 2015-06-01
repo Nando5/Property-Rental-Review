@@ -3,7 +3,8 @@ class SessionController < ApplicationController
   end
 
  def create
-    tenant = Tenant.find_by :name => params[:email]
+    # raise params.inspect
+    tenant = Tenant.find_by :email => params[:email]
     if tenant.present? && tenant.authenticate(params[:password])
       session[:tenant_id] = tenant.id
       redirect_to root_path
@@ -29,4 +30,9 @@ class SessionController < ApplicationController
     session[:tenant_id] = nil
     redirect_to root_path
   end
+
+  # private
+  # def session_params
+  #   params.require(:session).permit(:email, :password)
+  # end
 end

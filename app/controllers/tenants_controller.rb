@@ -1,5 +1,6 @@
 class TenantsController < ApplicationController
   def index
+    @tenants = Tenant.all
   end
 
   def create
@@ -17,6 +18,8 @@ class TenantsController < ApplicationController
   end
 
   def edit
+    @tenant = @current_tenant
+    render :new
   end
 
   def show
@@ -27,4 +30,10 @@ class TenantsController < ApplicationController
 
   def destroy
   end
+
+  private
+  def tenant_params
+    params.require(:tenant).permit(:name, :email, :password, :password_confirmation)
+  end
+
 end

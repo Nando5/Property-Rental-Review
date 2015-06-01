@@ -14,4 +14,10 @@ Property.destroy_all
 
 # t1 = Tenant.create (:name => 'Walter Matthews', :email => 'wmatthews@gmail.com')
 
-Property.create (:street_address => '27 Brunswick Street', :suburb => 'Granville', :state => 'NSW', :postcode => 2142)
+Property.create(:street_address => '27 Brunswick Street', :suburb => 'Granville', :state => 'NSW', :postcode => 2142)
+Property.create(:street_address => '5 Purton Street', :suburb => 'Stanhope Gardens', :state => 'NSW', :postcode => 2768)
+Property.create(:street_address => '16 Claremont Street', :suburb => 'Merrylands', :state => 'NSW', :postcode => 2160)
+
+Review.create(:comment => 'seed1: nice place', :rating => 6)
+Review.create(:comment => 'seed2: very ugly', :rating => 8)
+Review.create(:comment => 'seed3: magnificent', :rating => 5)

@@ -19,6 +19,10 @@
 		</nav>
 	</header>	
 
+	<% if flash[:notice].present? %>
+  		<h2><%= flash[:notice] %></h2>
+	<% end %>
+
 
 <%= yield %>
 
