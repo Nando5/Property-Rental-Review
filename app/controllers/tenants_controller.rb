@@ -3,6 +3,11 @@ class TenantsController < ApplicationController
     @tenants = Tenant.all
   end
 
+
+  def new
+    @tenant = Tenant.new
+  end
+
   def create
     @tenant = Tenant.new tenant_params
 
@@ -12,11 +17,7 @@ class TenantsController < ApplicationController
       render :new
     end
   end
-
-  def new
-    @tenant = Tenant.new
-  end
-
+  
   def edit
     @tenant = @current_tenant
     render :new
@@ -26,6 +27,9 @@ class TenantsController < ApplicationController
   end
 
   def update
+    tenant = @current_tenant
+    tenant.update tenant_params
+    redirect_to root_path
   end
 
   def destroy

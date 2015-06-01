@@ -2,6 +2,21 @@ class SessionController < ApplicationController
   def index
   end
 
+  def new
+  end
+
+# def create
+#   @tenant = Tenant.find_by_email(params[:sessions][:email])
+#   if @tenant && @tenant.authenticate(params[:sessions][:password])
+#     session[:tenant_id] = @tenant.id
+#     redirect_to root_path
+#   else
+#     flash[:notice] = "Invalid login, please try again."
+#     redirect_to login_path
+#   end 
+# end
+
+
  def create
     # raise params.inspect
     tenant = Tenant.find_by :email => params[:email]
@@ -14,8 +29,6 @@ class SessionController < ApplicationController
     end
   end
 
-  def new
-  end
 
   def edit
   end

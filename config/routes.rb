@@ -61,9 +61,12 @@ Rails.application.routes.draw do
   # get 'reviews/destroy'
   root :to => 'properties#index'
 
+  get 'signup'  => 'tenants#new' 
+
   resources :tenants, :reviews, :properties
 
   get '/login' => 'session#new'
   post '/login' => 'session#create'
+  delete '/login' => 'session#destroy'
   
 end
