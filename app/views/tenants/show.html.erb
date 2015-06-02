@@ -1,33 +1,35 @@
-<h1>Tenants#show</h1>
-<p>Find me in app/views/tenants/show.html.erb</p>
-
-<h1><%= @tenant.name %></h1>
+<h3>Welcome <%=  @tenant.name %></h3>
 	<div class="myList">
 		<ul>
 		  <li><%= @tenant.name %></li>
 		  <li><%= @tenant.email %></li>
-		
 		  <li><%= link_to('Edit', edit_tenant_path(@tenant)) %></li>
 		  <li><%= link_to('Delete', @tenant, :method => 'delete', :data => {:confirm => 'Are you sure?'}) %></li>
 		</ul>
 	</div>
 
 <h3>Property</h3>
-  <% @tenant.properties.each do |property| %>
-  	<%= property.street_address %>
-  	<%= property.suburb %>
-  	<%= property.state %>
-  	<%= property.postcode %>
-
-  	<%= link_to('Edit', edit_property_path(property)) %>
-	<%= link_to('Delete', property, :method => 'delete', :data => {:confirm => 'Are you sure?'}) %>
-  <% end %>
+<div class="myList">
+	<ul>
+	  <% @tenant.properties.each do |property| %>
+	  	<li><%= property.street_address %></li>
+	  	<li><%= property.suburb %></li>
+	  	<li><%= property.state %></li>
+	  	<li><%= property.postcode %></li>
+	  	<li><%= link_to('Edit', edit_property_path(property)) %></li>
+		<li><%= link_to('Delete', property, :method => 'delete', :data => {:confirm => 'Are you sure?'}) %></li>
+    </ul>
+    <% end %>
+  </div>
 
 <h3>Review</h3>
-  <% @tenant.reviews.each do |review| %>
-  	<%= review.comment %>
-  	<%= review.rating %>
-
-  	<%= link_to('Edit', edit_review_path(review)) %>
-	<%= link_to('Delete', review, :method => 'delete', :data => {:confirm => 'Are you sure?'}) %>
-  <% end %>
+<div class="myList">
+	<ul>
+	    <% @tenant.reviews.each do |review| %>
+	  	<li><%= review.comment %></li>
+	  	<li><%= review.rating %></li>
+	  	<li><%= link_to('Edit', edit_review_path(review)) %></li>
+		<li><%= link_to('Delete', review, :method => 'delete', :data => {:confirm => 'Are you sure?'}) %></li>
+	</ul>
+    <% end %>
+ </div>

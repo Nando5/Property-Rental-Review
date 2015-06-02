@@ -1,13 +1,13 @@
-<h1>Properties#index</h1>
+<h3>Search for a property</h3>
 
 <% @properties.each do |property| %>
 	<div class="myList">
 		<ul>
-			<li><%= link_to(property.street_address, property) %></li>
 			<li><%= property.street_address %></li>
 			<li><%= property.suburb %></li>
 			<li><%= property.state %></li>
 			<li><%= property.postcode %></li>
+			<li><%= link_to('Read Review', property) %></li>
 		</ul>
 	</div>
 <%end%>

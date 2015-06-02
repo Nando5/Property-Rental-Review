@@ -1,22 +1,19 @@
-<h1>Properties#show</h1>
-<p>Find me in app/views/properties/show.html.erb</p>
-
-<h1><%= @property.suburb %></h1>
+<h3>Address</h3>
 	<div class="myList">
 		<ul>
 		  <li><%= @property.street_address %></li>
 		  <li><%= @property.suburb %></li>
 		  <li><%= @property.state %></li>
 		  <li><%= @property.postcode %></li>
-		
-		  
 		</ul>
 	</div>
 
 <h3>Review</h3>
-
-  <% @property.reviews.each do |review| %>
-  	<%= review.comment %>
-  	<%= review.rating %>
-
-<% end %>
+	<div class="myList">
+		<ul>
+		    <% @property.reviews.each do |review| %>
+		  	<li><%= review.comment %></li>
+		  	<li><%= review.rating %></li>
+	  	</ul>
+		<% end %>
+	</div>
