@@ -18,10 +18,16 @@
   	<%= property.suburb %>
   	<%= property.state %>
   	<%= property.postcode %>
+
+  	<%= link_to('Edit', edit_property_path(property)) %>
+	<%= link_to('Delete', property, :method => 'delete', :data => {:confirm => 'Are you sure?'}) %>
   <% end %>
 
 <h3>Review</h3>
   <% @tenant.reviews.each do |review| %>
   	<%= review.comment %>
   	<%= review.rating %>
+
+  	<%= link_to('Edit', edit_review_path(review)) %>
+	<%= link_to('Delete', review, :method => 'delete', :data => {:confirm => 'Are you sure?'}) %>
   <% end %>

@@ -1,4 +1,7 @@
 class TenantsController < ApplicationController
+  
+  # before_action :check_if_admin, :only => [:index]
+
   def index
     @tenants = Tenant.all
   end
@@ -43,5 +46,9 @@ class TenantsController < ApplicationController
   def tenant_params
     params.require(:tenant).permit(:name, :email, :password, :password_confirmation)
   end
+
+  # def check_if_admin
+  #   redirect_to root_path unless @current_tenant.present? && @current_tenant.admin?
+  # end
 
 end

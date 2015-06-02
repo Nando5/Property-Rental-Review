@@ -9,8 +9,7 @@
 		  <li><%= @property.state %></li>
 		  <li><%= @property.postcode %></li>
 		
-		  <li><%= link_to('Edit', edit_property_path(@property)) %></li>
-		  <li><%= link_to('Delete', @property, :method => 'delete', :data => {:confirm => 'Are you sure?'}) %></li>
+		  
 		</ul>
 	</div>
 
@@ -18,5 +17,6 @@
 
   <% @property.reviews.each do |review| %>
   	<%= review.comment %>
+  	<%= review.rating %>
 
 <% end %>
