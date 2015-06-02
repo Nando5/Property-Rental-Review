@@ -3,20 +3,20 @@ class TenantsController < ApplicationController
     @tenants = Tenant.all
   end
 
+  def create
+    @tenant = Tenant.new tenant_params
+
+    if @tenant.save
+      redirect_to "/tenants/#{@tenant.id}"
+    else
+      render :new
+    end
+  end
 
   def new
     @tenant = Tenant.new
   end
 
-  def create
-    @tenant = Tenant.new tenant_params
-
-    if @tenant.save
-      redirect_to root_path
-    else
-      render :new
-    end
-  end
   
   def edit
     @tenant = @current_tenant
@@ -34,6 +34,9 @@ class TenantsController < ApplicationController
   end
 
   def destroy
+    tenant = @current_tenant
+    tenant.destroy
+    redirect_to root_path
   end
 
   private

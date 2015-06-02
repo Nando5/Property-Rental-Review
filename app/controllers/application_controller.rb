@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
 
   private
   def authenticate
+  	# session[:tenant_id] = nil
     @current_tenant = Tenant.find session[:tenant_id] if session[:tenant_id]
   end
 end

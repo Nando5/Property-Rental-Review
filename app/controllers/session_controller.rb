@@ -5,24 +5,13 @@ class SessionController < ApplicationController
   def new
   end
 
-# def create
-#   @tenant = Tenant.find_by_email(params[:sessions][:email])
-#   if @tenant && @tenant.authenticate(params[:sessions][:password])
-#     session[:tenant_id] = @tenant.id
-#     redirect_to root_path
-#   else
-#     flash[:notice] = "Invalid login, please try again."
-#     redirect_to login_path
-#   end 
-# end
-
 
  def create
     # raise params.inspect
     tenant = Tenant.find_by :email => params[:email]
     if tenant.present? && tenant.authenticate(params[:password])
       session[:tenant_id] = tenant.id
-      redirect_to root_path
+      redirect_to tenant_path( tenant )
     else
       flash[:notice] = "Invalid login, please try again."
       redirect_to login_path
@@ -43,6 +32,7 @@ class SessionController < ApplicationController
     session[:tenant_id] = nil
     redirect_to root_path
   end
+
 
   # private
   # def session_params
