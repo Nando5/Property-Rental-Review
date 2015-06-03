@@ -37,6 +37,7 @@ class TenantsController < ApplicationController
   end
 
   def destroy
+    session[:tenant_id] = nil
     tenant = @current_tenant
     tenant.destroy
     redirect_to root_path

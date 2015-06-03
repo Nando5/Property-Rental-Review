@@ -65,6 +65,8 @@ Rails.application.routes.draw do
 
   resources :tenants, :reviews, :properties
 
+  post '/properties/:id/reviews', :to => "properties#create_review"
+
   get '/login' => 'session#new'
   post '/login' => 'session#create'
   # delete '/login' => 'session#destroy'

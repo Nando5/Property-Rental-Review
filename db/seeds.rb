@@ -6,9 +6,9 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-# Tenant.destroy_all
-# Property.destroy_all
-# Review.destroy_all
+Tenant.destroy_all
+Property.destroy_all
+Review.destroy_all
 
 
 t1 = Tenant.create(:name => 'Walter Matthews', :email => 'wmatthews@gmail.com', :password => "chicken", :password_confirmation => "chicken")

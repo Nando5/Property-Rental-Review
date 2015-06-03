@@ -24,12 +24,14 @@ end
   def intellinav
     nav = ''
 
-    if @current_tenant.present?
-      nav += '<li>' + link_to('Show my properties', tenant_path(@current_tenant.id)) + '</li>'
-    end
+    # if @current_tenant.present?
+    #   nav += '<li>' + link_to('Show my properties', tenant_path(@current_tenant.id)) + '</li>'
+    # end
 
     if @current_tenant.present?
-      nav += '<li>' + link_to("Edit profile", edit_tenant_path(@current_tenant)) + '</li>'
+      nav += '<li>' + link_to("Add Property", new_property_path(@current_tenant)) + '</li>'
+      # nav += '<li>' + link_to("Add Review", new_review_path(@current_tenant)) + '</li>'
+      nav += '<li>' + link_to("Profile", tenant_path(@current_tenant)) + '</li>'
       nav += '<li>' + link_to("Log out #{ @current_tenant.name }", login_path, :method => :delete) + '</li>'
     else
       nav += '<li>' + link_to('Sign up', new_tenant_path) + '</li>'

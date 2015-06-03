@@ -4,11 +4,17 @@ class ReviewsController < ApplicationController
   end
 
   def create
+    prop_id = params[:review][:property_id]
     review = Review.create review_params
-     redirect_to review
+
+    @current_tenant.reviews << review
+    Property.find( prop_id ).reviews << review
+
+    redirect_to review
   end
 
   def new
+    # raise params.inspect
     @review = Review.new
   end
 

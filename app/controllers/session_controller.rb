@@ -7,11 +7,12 @@ class SessionController < ApplicationController
 
 
  def create
-    # raise params.inspect
+          # raise params.inspect
     tenant = Tenant.find_by :email => params[:email]
     if tenant.present? && tenant.authenticate(params[:password])
       session[:tenant_id] = tenant.id
       redirect_to tenant_path( tenant )
+
     else
       flash[:notice] = "Invalid login, please try again."
       redirect_to login_path
