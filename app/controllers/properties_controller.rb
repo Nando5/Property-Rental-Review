@@ -11,10 +11,19 @@ class PropertiesController < ApplicationController
 
   def create_review
     property = Property.find( params[:id] )
-    
+
     property.reviews.create( 
       :comment => params["properties"]["comment"], 
-      :rating => params["properties"]["rating"]
+      :rating => params["properties"]["rating"],
+      :time_lived => params["properties"]["time_lived"], 
+      :building_condition => params["properties"]["building_condition"],
+      :kitchen_condition => params["properties"]["kitchen_condition"], 
+      :bathroom_condition => params["properties"]["bathroom_condition"],
+      :bedroom_condition => params["properties"]["bedroom_condition"],
+      :area_crime => params["properties"]["area_crime"], 
+      :area_proximity => params["properties"]["area_proximity"],
+      :property_management => params["properties"]["property_management"], 
+      :overall_comment => params["properties"]["overall_comment"]
     )
 
     redirect_to property_path( property )
@@ -42,7 +51,7 @@ class PropertiesController < ApplicationController
   def destroy
     property = Property.find params[:id]
     property.destroy
-    redirect_to properties_path
+    redirect_to tenant_path(@current_tenant)
   end
 
   private

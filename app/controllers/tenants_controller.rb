@@ -33,7 +33,7 @@ class TenantsController < ApplicationController
   def update
     tenant = @current_tenant
     tenant.update tenant_params
-    redirect_to root_path
+    redirect_to tenant_path(@current_tenant)
   end
 
   def destroy

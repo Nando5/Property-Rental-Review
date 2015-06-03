@@ -13,7 +13,10 @@ Review.destroy_all
 
 t1 = Tenant.create(:name => 'Walter Matthews', :email => 'wmatthews@gmail.com', :password => "chicken", :password_confirmation => "chicken")
 p1 = Property.create(:street_address => '27 Brunswick Street', :suburb => 'Granville', :state => 'NSW', :postcode => 2142)
-r1 = Review.create(:comment => 'seed1: nice place', :rating => 6)
+r1 = Review.create(:comment => 'seed1: nice place', :rating => 8, :time_lived => '2 years', :building_condition => "Building is sound, few creaks here and there but all ok",
+					:kitchen_condition => 'nice granite tops, electric, no gas', :bathroom_condition => "Old tub, not good for romance", :bedroom_condition => "Big enough for large closets",
+					:area_crime => "very safe daytime, a little less at night", :area_proximity => "Close to shops and transport", :property_management => "Shit, never there to help",
+					:overall_comment => "A a very nice place to stay for 6 months")
 
 t2 = Tenant.create(:name => 'Jack Dawson', :email => 'jdawson@gmail.com', :password => "chicken", :password_confirmation => "chicken")
 p2 = Property.create(:street_address => '5 Purton Street', :suburb => 'Stanhope Gardens', :state => 'NSW', :postcode => 2768)

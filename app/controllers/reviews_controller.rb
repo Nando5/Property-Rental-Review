@@ -35,11 +35,13 @@ class ReviewsController < ApplicationController
   def destroy
     review = Review.find params[:id]
     review.destroy
-    redirect_to reviews_path
+    redirect_to tenant_path(@current_tenant)
   end
 
   private
   def review_params
-    params.require(:review).permit(:comment, :rating)
+    params.require(:review).permit(:comment, :rating, :time_lived, :building_condition, 
+                                    :kitchen_condition, :bathroom_condition, :bedroom_condition,
+                                    :area_crime, :area_proximity, :property_management, :overall_comment)
   end
 end

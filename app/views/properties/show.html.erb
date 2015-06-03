@@ -14,6 +14,15 @@
 	    <% @property.reviews.each do |review| %>
 		  	<li><%= review.comment %></li>
 		  	<li><%= review.rating %></li>
+		    <li><%= review.time_lived %></li>
+		    <li><%= review.building_condition %></li>
+		    <li><%= review.kitchen_condition %></li>
+		    <li><%= review.bathroom_condition %></li>
+		    <li><%= review.bedroom_condition %></li>
+		    <li><%= review.area_crime %></li>
+		    <li><%= review.area_proximity %></li>
+		    <li><%= review.property_management %></li>
+		    <li><%= review.overall_comment %></li>
 	  	<% end %>
   	</ul>
 </div>
@@ -29,6 +38,43 @@
 			<%= f.label :rating %>
 			<%= f.text_field :rating %>
 		</p>
+		<p>
+			<%= f.label :time_lived %>
+			<%= f.text_field :time_lived %>
+		</p>
+		<p>
+			<%= f.label :building_condition %>
+			<%= f.text_field :building_condition %>
+		</p>
+		<p>
+			<%= f.label :kitchen_condition %>
+			<%= f.text_field :kitchen_condition %>
+		</p>
+		<p>
+			<%= f.label :bathroom_condition %>
+			<%= f.text_field :bathroom_condition %>
+		</p>
+		<p>
+			<%= f.label :bedroom_condition %>
+			<%= f.text_field :bedroom_condition %>
+		</p>
+		<p>
+			<%= f.label :area_crime %>
+			<%= f.text_field :area_crime %>
+		</p>
+		<p>
+			<%= f.label :area_proximity %>
+			<%= f.text_field :area_proximity %>
+		</p>
+		<p>
+			<%= f.label :property_management %>
+			<%= f.text_field :property_management %>
+		</p>
+		<p>
+			<%= f.label :overall_comment %>
+			<%= f.text_field :overall_comment %>
+		</p>
+
 		<%= f.submit %>
 	<% end %>
 <% end %>
