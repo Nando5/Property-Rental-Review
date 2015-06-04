@@ -1,17 +1,21 @@
-<h3>Search for a property</h3>
+<h3>search for a property</h3>
+<div class="searchForm">
+		<%= form_for "search", url: "/search" do |f| %>
+		<%= f.text_field :query, :placeholder => "Property Suburb" %>
+		<%= f.submit "Search!" %>
+	<% end %>
+</div>
 
-<%= form_for "search", url: "/search" do |f| %>
-	<%= f.text_field :query, :placeholder => "Property Suburb" %>
-	<%= f.submit "Search!" %>
-<% end %>
+<div class="myProperties">
+	<% @properties.each do |property| %>
+		<div class="myList">
+			<ul>
+				<li><%= property.street_address %></li>
+				<li><%= property.suburb %> <%= property.state %> <%= property.postcode %></li>
+				
+				<li><%= link_to('Read Review', property) %></li>
+			</ul>
+		</div>
+	<%end%>
+</div>
 
-<% @properties.each do |property| %>
-	<div class="myList">
-		<ul>
-			<li><%= property.street_address %></li>
-			<li><%= property.suburb %> <%= property.state %> <%= property.postcode %></li>
-			
-			<li><%= link_to('Read Review', property) %></li>
-		</ul>
-	</div>
-<%end%>

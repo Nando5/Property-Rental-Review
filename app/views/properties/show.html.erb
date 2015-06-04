@@ -1,93 +1,96 @@
 <h3>Address</h3>
-<div class="myAddress">
+<div class="myList">
 	<ul>
 	  <li><%= @property.street_address %></li>
 	  <li><%= @property.suburb %> <%= @property.state %> <%= @property.postcode %></li>
 	</ul>
 </div>
 
-<div class="myReviews">
-<h3>Review</h3>
-	<ul>
-		  	<% @property.reviews.each do |review| %>
-		  	<h3>Review no. says...</h3>
-		  	<h4>Comment</h4>
-		  	<li><%= review.comment %></li>
-		  	<h4>Rating</h4>
-		  	<li><%= review.rating %></li>
-		  	<h4>Time Lived</h4>
-		    <li><%= review.time_lived %></li>
-		    <h4>Building Condition</h4>
-		    <li><%= review.building_condition %></li>
-		    <h4>Kitchen Condition</h4>
-		    <li><%= review.kitchen_condition %></li>
-		    <h4>Bathroom Condition</h4>
-		    <li><%= review.bathroom_condition %></li>
-		    <h4>Bedroom Condition</h4>
-		    <li><%= review.bedroom_condition %></li>
-		    <h4>Crime level</h4>
-		    <li><%= review.area_crime %></li>
-		    <h4>Proximity to Services</h4>
-		    <li><%= review.area_proximity %></li>
-		    <h4>Property Management</h4>
-		    <li><%= review.property_management %></li>
-		    <h4>Overall Comments</h4>
-		    <li><%= review.overall_comment %></li>
-		    <br><br>
-	  	<% end %>
-  	</ul>
+<div class="listToSitLeft">
+	<div class="myList">
+	<h3>Review</h3>
+		<ul>
+			  	<% @property.reviews.each do |review| %>
+			  	<h4>Comment</h4>
+			  	<li><%= review.comment %></li>
+			  	<h4>Rating</h4>
+			  	<li><%= review.rating %></li>
+			  	<h4>Time Lived</h4>
+			    <li><%= review.time_lived %></li>
+			    <h4>Building Condition</h4>
+			    <li><%= review.building_condition %></li>
+			    <h4>Kitchen Condition</h4>
+			    <li><%= review.kitchen_condition %></li>
+			    <h4>Bathroom Condition</h4>
+			    <li><%= review.bathroom_condition %></li>
+			    <h4>Bedroom Condition</h4>
+			    <li><%= review.bedroom_condition %></li>
+			    <h4>Crime level</h4>
+			    <li><%= review.area_crime %></li>
+			    <h4>Proximity to Services</h4>
+			    <li><%= review.area_proximity %></li>
+			    <h4>Property Management</h4>
+			    <li><%= review.property_management %></li>
+			    <h4>Overall Comments</h4>
+			    <li><%= review.overall_comment %></li>
+			    <br><br>
+		  	<% end %>
+	  	</ul>
+	</div>
 </div>
 
 
 
-<% if @current_tenant %>
-	<h3>Add New Review</h3>
-	<%= form_for "properties", url: "/properties/#{ @property.id }/reviews"  do |f| %>
-		<p>
-			<%= f.label :comment %>
-			<%= f.text_field :comment %>
-		</p>
-		<p>
-			<%= f.label :rating %>
-			<%= f.text_field :rating %>
-		</p>
-		<p>
-			<%= f.label :time_lived %>
-			<%= f.text_field :time_lived %>
-		</p>
-		<p>
-			<%= f.label :building_condition %>
-			<%= f.text_field :building_condition %>
-		</p>
-		<p>
-			<%= f.label :kitchen_condition %>
-			<%= f.text_field :kitchen_condition %>
-		</p>
-		<p>
-			<%= f.label :bathroom_condition %>
-			<%= f.text_field :bathroom_condition %>
-		</p>
-		<p>
-			<%= f.label :bedroom_condition %>
-			<%= f.text_field :bedroom_condition %>
-		</p>
-		<p>
-			<%= f.label :area_crime %>
-			<%= f.text_field :area_crime %>
-		</p>
-		<p>
-			<%= f.label :area_proximity %>
-			<%= f.text_field :area_proximity %>
-		</p>
-		<p>
-			<%= f.label :property_management %>
-			<%= f.text_field :property_management %>
-		</p>
-		<p>
-			<%= f.label :overall_comment %>
-			<%= f.text_field :overall_comment %>
-		</p>
+<div class="listToSitLeft1">
+	<% if @current_tenant %>
+		<h3>Add New Review</h3>
+		<%= form_for "properties", url: "/properties/#{ @property.id }/reviews"  do |f| %>
+			<p>
+				<%= f.label :comment %>
+				<%= f.text_field :comment %>
+			</p>
+			<p>
+				<%= f.label :rating %>
+				<%= f.text_field :rating %>
+			</p>
+			<p>
+				<%= f.label :time_lived %>
+				<%= f.text_field :time_lived %>
+			</p>
+			<p>
+				<%= f.label :building_condition %>
+				<%= f.text_field :building_condition %>
+			</p>
+			<p>
+				<%= f.label :kitchen_condition %>
+				<%= f.text_field :kitchen_condition %>
+			</p>
+			<p>
+				<%= f.label :bathroom_condition %>
+				<%= f.text_field :bathroom_condition %>
+			</p>
+			<p>
+				<%= f.label :bedroom_condition %>
+				<%= f.text_field :bedroom_condition %>
+			</p>
+			<p>
+				<%= f.label :area_crime %>
+				<%= f.text_field :area_crime %>
+			</p>
+			<p>
+				<%= f.label :area_proximity %>
+				<%= f.text_field :area_proximity %>
+			</p>
+			<p>
+				<%= f.label :property_management %>
+				<%= f.text_field :property_management %>
+			</p>
+			<p>
+				<%= f.label :overall_comment %>
+				<%= f.text_field :overall_comment %>
+			</p>
 
-		<%= f.submit %>
+			<%= f.submit %>
+		<% end %>
 	<% end %>
-<% end %>
+</div>
