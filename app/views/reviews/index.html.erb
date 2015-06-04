@@ -3,9 +3,8 @@
 <% @reviews.each do |review| %>
 	<div class="myList">
 		<ul>
-		  <li><%= link_to(review.comment, review) %></li>
-		  <li><%= review.comment %></li>
-		  <li><%= review.rating %></li>
+		  <li><%= link_to(review.time_lived, review) %></li>
+
 		  <li><%= review.time_lived %></li>
 		  <li><%= review.building_condition %></li>
 		  <li><%= review.kitchen_condition %></li>

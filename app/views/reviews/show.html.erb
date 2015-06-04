@@ -1,22 +1,28 @@
-<h1>Reviews#show</h1>
-<p>Find me in app/views/reviews/show.html.erb</p>
+<h1>Review</h1>
 
 <h1><%= @review.rating %></h1>
 	<div class="myList">
 		<ul>
-		  <li><%= @review.comment %></li>
-		  <li><%= @review.rating %></li>
-		  <li><%= @review.time_lived %></li>
-		  <li><%= @review.building_condition %></li>
-		  <li><%= @review.kitchen_condition %></li>
-		  <li><%= @review.bathroom_condition %></li>
-		  <li><%= @review.bedroom_condition %></li>
-		  <li><%= @review.area_crime %></li>
-		  <li><%= @review.area_proximity %></li>
-		  <li><%= @review.property_management %></li>
-		  <li><%= @review.overall_comment %></li>
-		
-		  <li><%= link_to('Edit', edit_review_path(@review)) %></li>
-		  <li><%= link_to('Delete', @review, :method => 'delete', :data => {:confirm => 'Are you sure?'}) %></li>
+		  	<h4>Time Lived</h4>
+			<li><%= @review.time_lived %></li>
+			<h4>Building Condition</h4>
+			<li><%= @review.building_condition %></li>
+			<h4>Kitchen Condition</h4>
+			<li><%= @review.kitchen_condition %></li>
+			<h4>Bathroom Condition</h4>
+			<li><%= @review.bathroom_condition %></li>
+			<h4>Bedroom Condition</h4>
+			<li><%= @review.bedroom_condition %></li>
+			<h4>Crime level</h4>
+			<li><%= @review.area_crime %></li>
+			<h4>Proximity to Services</h4>
+			<li><%= @review.area_proximity %></li>
+			<h4>Property Management</h4>
+			<li><%= @review.property_management %></li>
+			<h4>Overall Comments</h4>
+			<li><%= @review.overall_comment %></li>
+			<br><br>
+		    <li><%= link_to('Edit', edit_review_path(@review)) %></li>
+		    <li><%= link_to('Delete', @review, :method => 'delete', :data => {:confirm => 'Are you sure?'}) %></li>
 		</ul>
 	</div>

@@ -13,8 +13,6 @@ class PropertiesController < ApplicationController
     property = Property.find( params[:id] )
 
     property.reviews.create( 
-      :comment => params["properties"]["comment"], 
-      :rating => params["properties"]["rating"],
       :time_lived => params["properties"]["time_lived"], 
       :building_condition => params["properties"]["building_condition"],
       :kitchen_condition => params["properties"]["kitchen_condition"], 

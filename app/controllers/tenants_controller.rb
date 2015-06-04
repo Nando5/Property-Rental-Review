@@ -10,7 +10,7 @@ class TenantsController < ApplicationController
     @tenant = Tenant.new tenant_params
 
     if @tenant.save
-      redirect_to "/tenants/#{@tenant.id}"
+      redirect_to login_path
     else
       render :new
     end

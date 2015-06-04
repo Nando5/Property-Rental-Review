@@ -40,7 +40,7 @@ class ReviewsController < ApplicationController
 
   private
   def review_params
-    params.require(:review).permit(:comment, :rating, :time_lived, :building_condition, 
+    params.require(:review).permit(:time_lived, :building_condition, 
                                     :kitchen_condition, :bathroom_condition, :bedroom_condition,
                                     :area_crime, :area_proximity, :property_management, :overall_comment)
   end
