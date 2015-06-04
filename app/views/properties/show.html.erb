@@ -6,7 +6,7 @@
 	</ul>
 </div>
 
-<div class="listToSitLeft">
+<div class="reviews">
 	<div class="myList">
 	<h3>Review</h3>
 		<ul>
@@ -41,7 +41,7 @@
 
 
 
-<div class="listToSitLeft1">
+<div class="addReview">
 	<% if @current_tenant %>
 		<h3>Add New Review</h3>
 		<%= form_for "properties", url: "/properties/#{ @property.id }/reviews"  do |f| %>

@@ -8,57 +8,69 @@
 	</ul>
 </div>
 
+<% @tenant.properties.each do |property| %>
+	<% property.reviews.each do |review|%>
+		<div class="property-and-review">
+			<!-- PROPERTY SECTION -->
+			<div class="myList">
+				<h3>Property</h3>
+				<a href="/properties/<%= property.id %>">
+					<ul>
+						<li><%= property.street_address %></li>
+						<li><%= property.suburb %> <%= property.state %> <%= property.postcode %></li>
 
-	<div class="myList">
-		<h3>Property</h3>
-		<% @tenant.properties.each do |property| %>
-		<a href="/properties/<%= property.id %>">
-			<ul>
-				<li><%= property.street_address %></li>
-				<li><%= property.suburb %> <%= property.state %> <%= property.postcode %></li>
-
-				<li><%= link_to('Edit', edit_property_path(property)) %>
-				 <%= link_to('Delete', property, :method => 'delete', :data => {:confirm => 'Are you sure?'}) %></li>
-			</ul>
-		</a>
-	</div>
+						<li><%= link_to('Edit', edit_property_path(property)) %>
+						 <%= link_to('Delete', property, :method => 'delete', :data => {:confirm => 'Are you sure?'}) %></li>
+					</ul>
+				</a>
+			</div>
 
 
-<div class="listToSitLeft">	
-	<div class="myList">
-		<h3>Review</h3>
-		<% property.reviews.each do |review|%>
-			<ul>
-				<h4>Comment</h4>
-			  	<li><%= review.comment %></li>
-			  	<h4>Rating</h4>
-			  	<li><%= review.rating %></li>
-			  	<h4>Time Lived</h4>
-			    <li><%= review.time_lived %></li>
-			    <h4>Building Condition</h4>
-			    <li><%= review.building_condition %></li>
-			    <h4>Kitchen Condition</h4>
-			    <li><%= review.kitchen_condition %></li>
-			    <h4>Bathroom Condition</h4>
-			    <li><%= review.bathroom_condition %></li>
-			    <h4>Bedroom Condition</h4>
-			    <li><%= review.bedroom_condition %></li>
-			    <h4>Crime level</h4>
-			    <li><%= review.area_crime %></li>
-			    <h4>Proximity to Services</h4>
-			    <li><%= review.area_proximity %></li>
-			    <h4>Property Management</h4>
-			    <li><%= review.property_management %></li>
-			    <h4>Overall Comments</h4>
-			    <li><%= review.overall_comment %></li>
-			    <br><br>
+			<!-- REVIEWS SECTION -->
+			<div class="myList reviews">
+				<h3>Reviews</h3>
+				<ul>
+					<h4>Comment</h4>
+				  	<li><%= review.comment %></li>
+				  	<h4>Rating</h4>
+				  	<li><%= review.rating %></li>
+				  	<h4>Time Lived</h4>
+				    <li><%= review.time_lived %></li>
+				    <h4>Building Condition</h4>
+				    <li><%= review.building_condition %></li>
+				    <h4>Kitchen Condition</h4>
+				    <li><%= review.kitchen_condition %></li>
+				    <h4>Bathroom Condition</h4>
+				    <li><%= review.bathroom_condition %></li>
+				    <h4>Bedroom Condition</h4>
+				    <li><%= review.bedroom_condition %></li>
+				    <h4>Crime level</h4>
+				    <li><%= review.area_crime %></li>
+				    <h4>Proximity to Services</h4>
+				    <li><%= review.area_proximity %></li>
+				    <h4>Property Management</h4>
+				    <li><%= review.property_management %></li>
+				    <h4>Overall Comments</h4>
+				    <li><%= review.overall_comment %></li>
+				    <br><br>
 
-				<li><%= link_to('Edit', edit_review_path(review)) %>
-				 <%= link_to('Delete', review, :method => 'delete', :data => {:confirm => 'Are you sure?'}) %></li>
-			</ul>
-		<% end %>
+					<li><%= link_to('Edit', edit_review_path(review)) %>
+					 <%= link_to('Delete', review, :method => 'delete', :data => {:confirm => 'Are you sure?'}) %></li>
+				</ul>
+			</div>
+		</div>
+
+
+
 	<% end %>
-</div>
+<% end %>
+
+
+
+
+
+
+
 
 <div class="comment">
 	<div id="disqus_thread"></div>

@@ -119,23 +119,7 @@ form {
 	padding-bottom: 30px;
 }
 
-.listToSitLeft {
-	width: 650px;
-	background-color: #A9DFD7;
-	border-radius: 20px;
-	position: relative;
-  	left: 230px;
-  	top: -145px;
-}
 
-.listToSitLeft1 {
-	width: 650px;
-	background-color: #DEDFA9;
-	border-radius: 20px;
-	position: relative;
-  	left: 230px;
-  	top: -145px;
-}
 
 .myList/*.myAddress.myReviews.myProperties*/ {
 	clear: both;
@@ -162,4 +146,51 @@ form {
 
 .myList/*.myAddress.myReviews.myProperties*/ li a:hover, .myList li a.current {
 	color: #DEDFA9;
+}
+
+
+
+/*.myReviews {
+	width: 650px;
+	background-color: #A9DFD7;
+	border-radius: 20px;
+	position: relative;
+  	left: 230px;
+  	top: -145px;
+}
+
+.listToSitLeft1 {
+	width: 650px;
+	background-color: #DEDFA9;
+	border-radius: 20px;
+	position: relative;
+  	left: 230px;
+  	top: -145px;	
+}*/
+
+
+.property-and-review {
+	
+}
+
+.property {
+	
+}
+
+.reviews {
+	width: 650px;
+	background-color: #A9DFD7;
+	border-radius: 20px;
+	position: relative;
+  	left: 230px;
+  	top: -145px;
+}
+
+.addReview {
+	width: 650px;
+	background-color: #DEDFA9;
+	border-radius: 20px;
+	position: relative;
+  	left: 230px;
+  	top: -145px;
 }
