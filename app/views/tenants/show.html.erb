@@ -3,8 +3,8 @@
 	<ul>
 		<li><%= @tenant.name %></li>
 		<li><%= @tenant.email %></li>
-		<li><%= link_to('Edit', edit_tenant_path(@tenant)) %></li>
-		<li><%= link_to('Delete', @tenant, :method => 'delete', :data => {:confirm => 'Are you sure?'}) %></li>
+		<li><%= link_to('Edit', edit_tenant_path(@tenant)) %>
+		 <%= link_to('Delete', @tenant, :method => 'delete', :data => {:confirm => 'Are you sure?'}) %></li>
 	</ul>
 </div>
 
@@ -14,11 +14,10 @@
 	<a href="/properties/<%= property.id %>">
 		<ul>
 			<li><%= property.street_address %></li>
-			<li><%= property.suburb %></li>
-			<li><%= property.state %></li>
-			<li><%= property.postcode %></li>
-			<li><%= link_to('Edit', edit_property_path(property)) %></li>
-			<li><%= link_to('Delete', property, :method => 'delete', :data => {:confirm => 'Are you sure?'}) %></li>
+			<li><%= property.suburb %> <%= property.state %> <%= property.postcode %></li>
+
+			<li><%= link_to('Edit', edit_property_path(property)) %>
+			 <%= link_to('Delete', property, :method => 'delete', :data => {:confirm => 'Are you sure?'}) %></li>
 		</ul>
 	</a>
 </div>
@@ -41,12 +40,24 @@
 				<li><%= review.property_management %></li>
 				<li><%= review.overall_comment %></li>
 
-				<li><%= link_to('Edit', edit_review_path(review)) %></li>
-				<li><%= link_to('Delete', review, :method => 'delete', :data => {:confirm => 'Are you sure?'}) %></li>
+				<li><%= link_to('Edit', edit_review_path(review)) %>
+				 <%= link_to('Delete', review, :method => 'delete', :data => {:confirm => 'Are you sure?'}) %></li>
 			</ul>
 		
 	<% end %>
 <% end %>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'rentalapp1';
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 </div>
-
-

@@ -23,16 +23,15 @@ header, nav {
 
 
 body {
-	background-color: grey;
-	color: #666666;
-	font-family: Arial, Times, serif;
-	line-height: 1.4em;
+	background-color: #413f3b;
+/*	color: #ffffff;*/
+	font-family: Georgia, Times, serif;
 	margin: 0px;
 }
 
 header {
 	height: 110px;
-	background-color: rgba(79, 33, 42, 1);
+	background-color: #100f3b;
 	margin-bottom: 45px;
 	padding-top: 20px;
 }
@@ -74,6 +73,10 @@ h3 {
 	margin-left: 30px;
 }
 
+h4 {
+	margin-bottom: 0px;
+}
+
 form {
   text-align: left;
   display: inline-table;
@@ -97,30 +100,29 @@ form {
 	margin: 20px;
 }
 
-.myList {
+.myList.myAddress.myReviews.myProperties {
 	clear: both;
 	color: rgba(79, 33, 42, 1);
 	margin-bottom: 10px;
 }
 
-.myList ul {
+.myList.myAddress.myReviews.myProperties ul {
 	list-style-type: none;
 	margin: 0px 0px;
 	padding: 5px 0px 5px 30px;
 }
 
-.myList li {
+.myList.myAddress.myReviews.myProperties li {
 /*	display: inline;*/
+    list-style-type: none;
 	margin-right: 50px;
 }
 
-.myList li a {
+.myList.myAddress.myReviews.myProperties li a {
 	color: rgba(79, 33, 42, 1);
 	text-decoration: none;
 }
 
-.myList li a:hover, .myList li a.current {
+.myList.myAddress.myReviews.myProperties li a:hover, .myList li a.current {
 	color: rgba(89, 151, 106, 1);
 }
-
-

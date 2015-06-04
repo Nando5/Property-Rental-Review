@@ -61,6 +61,8 @@ Rails.application.routes.draw do
   # get 'reviews/destroy'
   root :to => 'properties#index'
 
+  post '/search' => 'properties#search'
+
   get 'signup'  => 'tenants#new' 
 
   resources :tenants, :reviews, :properties

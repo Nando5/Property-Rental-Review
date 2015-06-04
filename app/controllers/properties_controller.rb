@@ -54,8 +54,41 @@ class PropertiesController < ApplicationController
     redirect_to tenant_path(@current_tenant)
   end
 
+  def search
+    query_from_form = params["search"]["query"]
+    @properties = Property.where(["suburb ILIKE :query or 
+                                   street_address ILIKE :query or 
+                                   state ILIKE :query or 
+                                   postcode ILIKE :query", { query: query_from_form }])
+
+    render :index
+  end
+
   private
   def property_params
     params.require(:property).permit(:street_address, :suburb, :state, :postcode)
   end
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

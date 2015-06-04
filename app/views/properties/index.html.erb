@@ -1,12 +1,16 @@
 <h3>Search for a property</h3>
 
+<%= form_for "search", url: "/search" do |f| %>
+	<%= f.text_field :query, :placeholder => "Property Suburb" %>
+	<%= f.submit "Search!" %>
+<% end %>
+
 <% @properties.each do |property| %>
 	<div class="myList">
 		<ul>
 			<li><%= property.street_address %></li>
-			<li><%= property.suburb %></li>
-			<li><%= property.state %></li>
-			<li><%= property.postcode %></li>
+			<li><%= property.suburb %> <%= property.state %> <%= property.postcode %></li>
+			
 			<li><%= link_to('Read Review', property) %></li>
 		</ul>
 	</div>

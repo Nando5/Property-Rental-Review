@@ -2,30 +2,43 @@
 <div class="myAddress">
 	<ul>
 	  <li><%= @property.street_address %></li>
-	  <li><%= @property.suburb %></li>
-	  <li><%= @property.state %></li>
-	  <li><%= @property.postcode %></li>
+	  <li><%= @property.suburb %> <%= @property.state %> <%= @property.postcode %></li>
 	</ul>
 </div>
 
 <div class="myReviews">
 <h3>Review</h3>
 	<ul>
-	    <% @property.reviews.each do |review| %>
+		  	<% @property.reviews.each do |review| %>
+		  	<h3>Review no. says...</h3>
+		  	<h4>Comment</h4>
 		  	<li><%= review.comment %></li>
+		  	<h4>Rating</h4>
 		  	<li><%= review.rating %></li>
+		  	<h4>Time Lived</h4>
 		    <li><%= review.time_lived %></li>
+		    <h4>Building Condition</h4>
 		    <li><%= review.building_condition %></li>
+		    <h4>Kitchen Condition</h4>
 		    <li><%= review.kitchen_condition %></li>
+		    <h4>Bathroom Condition</h4>
 		    <li><%= review.bathroom_condition %></li>
+		    <h4>Bedroom Condition</h4>
 		    <li><%= review.bedroom_condition %></li>
+		    <h4>Crime level</h4>
 		    <li><%= review.area_crime %></li>
+		    <h4>Proximity to Services</h4>
 		    <li><%= review.area_proximity %></li>
+		    <h4>Property Management</h4>
 		    <li><%= review.property_management %></li>
+		    <h4>Overall Comments</h4>
 		    <li><%= review.overall_comment %></li>
+		    <br><br>
 	  	<% end %>
   	</ul>
 </div>
+
+
 
 <% if @current_tenant %>
 	<h3>Add New Review</h3>
