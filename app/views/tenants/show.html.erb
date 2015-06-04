@@ -8,56 +8,71 @@
 	</ul>
 </div>
 
-<div class="myProperties">
-	<h3>Property</h3>
-	<% @tenant.properties.each do |property| %>
-	<a href="/properties/<%= property.id %>">
-		<ul>
-			<li><%= property.street_address %></li>
-			<li><%= property.suburb %> <%= property.state %> <%= property.postcode %></li>
 
-			<li><%= link_to('Edit', edit_property_path(property)) %>
-			 <%= link_to('Delete', property, :method => 'delete', :data => {:confirm => 'Are you sure?'}) %></li>
-		</ul>
-	</a>
-</div>
+	<div class="myList">
+		<h3>Property</h3>
+		<% @tenant.properties.each do |property| %>
+		<a href="/properties/<%= property.id %>">
+			<ul>
+				<li><%= property.street_address %></li>
+				<li><%= property.suburb %> <%= property.state %> <%= property.postcode %></li>
+
+				<li><%= link_to('Edit', edit_property_path(property)) %>
+				 <%= link_to('Delete', property, :method => 'delete', :data => {:confirm => 'Are you sure?'}) %></li>
+			</ul>
+		</a>
+	</div>
 
 
-	
-	<div class="myReviews">
+<div class="listToSitLeft">	
+	<div class="myList">
 		<h3>Review</h3>
 		<% property.reviews.each do |review|%>
 			<ul>
-				<li><%= review.comment %></li>
-				<li><%= review.rating %></li>
-				<li><%= review.time_lived %></li>
-				<li><%= review.building_condition %></li>
+				<h4>Comment</h4>
+			  	<li><%= review.comment %></li>
+			  	<h4>Rating</h4>
+			  	<li><%= review.rating %></li>
+			  	<h4>Time Lived</h4>
+			    <li><%= review.time_lived %></li>
+			    <h4>Building Condition</h4>
+			    <li><%= review.building_condition %></li>
+			    <h4>Kitchen Condition</h4>
 			    <li><%= review.kitchen_condition %></li>
-				<li><%= review.bathroom_condition %></li>
-				<li><%= review.bedroom_condition %></li>
-				<li><%= review.area_crime %></li>
-				<li><%= review.area_proximity %></li>
-				<li><%= review.property_management %></li>
-				<li><%= review.overall_comment %></li>
+			    <h4>Bathroom Condition</h4>
+			    <li><%= review.bathroom_condition %></li>
+			    <h4>Bedroom Condition</h4>
+			    <li><%= review.bedroom_condition %></li>
+			    <h4>Crime level</h4>
+			    <li><%= review.area_crime %></li>
+			    <h4>Proximity to Services</h4>
+			    <li><%= review.area_proximity %></li>
+			    <h4>Property Management</h4>
+			    <li><%= review.property_management %></li>
+			    <h4>Overall Comments</h4>
+			    <li><%= review.overall_comment %></li>
+			    <br><br>
 
 				<li><%= link_to('Edit', edit_review_path(review)) %>
 				 <%= link_to('Delete', review, :method => 'delete', :data => {:confirm => 'Are you sure?'}) %></li>
 			</ul>
-		
+		<% end %>
 	<% end %>
-<% end %>
+</div>
 
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES * * */
-    var disqus_shortname = 'rentalapp1';
-    
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<div class="comment">
+	<div id="disqus_thread"></div>
+		<script type="text/javascript">
+		    /* * * CONFIGURATION VARIABLES * * */
+		    var disqus_shortname = 'rentalapp1';
+		    
+		    /* * * DON'T EDIT BELOW THIS LINE * * */
+		    (function() {
+		        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		    })();
+		</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+	</div>
 </div>
