@@ -1,28 +1,43 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+EXERCISE 1
+Build my very first Rails App with Rails 4.2.1
 
-* Ruby version
+Description of App: A Rental Property Review app.
 
-* System dependencies
+Will allow anyone from the public to search and view different properties and see if former tenants have left a review of their time there. Could give would be tenants food for thought as to the condition of the buidling, problems with the area aswell as issues with property management.
 
-* Configuration
+If a user chooses to sign up they will be able to create their own property reviews, read other reviews aswell as add reviews/or comment on other properties.
 
-* Database creation
+First decided on what models i would have and what their relationships are to each other. Drew up a wireframe and laid out the basic CRUD fuctionality of the system. Decided on extra features like commenting with Disqus and adding Google street images so viewers could see an image of the address itself.
 
-* Database initialization
+I thought it best to design a basic version of what the user interface should look like and to explore extra functionality needed.
 
-* How to run the test suite
+OVERVIEW:
+1. Idea: To create a Rental Review App using Rails.
 
-* Services (job queues, cache servers, search engines, etc.)
+2. It will have 3 models. Tenants/Users, Properties and Reviews.
 
-* Deployment instructions
+	-Tenant: has_and_belongs_to_many :properties
+		     has_many :reviews
+	
+	-Property: has_and_belongs_to_many :tenants
+		     has_many :reviews
 
-* ...
+	-Review: has_many :tenants
+		   has_many :properties
 
+3. Once i had my models and a general idea of what each view would do, began generating controllers and migrations. Went about establishing fields for my tables.
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+4. As a beginner my aim was to see how to get a full CRUD system working. I began with getting the  sign up/login to work as i thought it would probably be the hardest part, and afterwards the other pieces would fall into place.
+
+5. After the basic functionality was there, i thought to add a search which is a necessity for this kind of app and added disqus as my API. Did not have time to add the Google maps API, that will have to come at a later date
+
+6. Only when all this was up and running, i began to make things pretty with some CSS. Chose to do it from scratch other than with bootstrap as it would provide good practice.
+
+7. Finally looked to create seed data to populate the database and use for demo.
+
+DURATION OF PROJECT: 1 Week
+
+Topics covered: Ruby, Rails, CSS, Html, Working with an API, Creating a CRUD system, Git, Deployment to Heroku.

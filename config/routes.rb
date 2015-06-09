@@ -32,33 +32,6 @@
 Rails.application.routes.draw do
 
 
-  # get 'properties/index'
-
-  # get 'properties/create'
-
-  # get 'properties/new'
-
-  # get 'properties/edit'
-
-  # get 'properties/show'
-
-  # get 'properties/update'
-
-  # get 'properties/destroy'
-
-  # get 'reviews/index'
-
-  # get 'reviews/create'
-
-  # get 'reviews/new'
-
-  # get 'reviews/edit'
-
-  # get 'reviews/show'
-
-  # get 'reviews/update'
-
-  # get 'reviews/destroy'
   root :to => 'properties#index'
 
   post '/search' => 'properties#search'
@@ -71,7 +44,7 @@ Rails.application.routes.draw do
 
   get '/login' => 'session#new'
   post '/login' => 'session#create'
-  # delete '/login' => 'session#destroy'
+
   delete '/login' => 'session#destroy'
   
 end
